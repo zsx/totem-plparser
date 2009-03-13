@@ -45,7 +45,7 @@
 			/>
 			<Tool
 				Name="DotInGeneratorTool"
-				Substitute="@TOTEM_PL_PARSER_MAJOR_VERSION@/$(TotemPlParserMajorVersion);@TOTEM_PL_PARSER_MINOR_VERSION@/$(TotemPlParserMinorVersion);@TOTEM_PL_PARSER_MICRO_VERSION@/$(TotemPlParserMicroVersion);@TOTEM_PL_PARSER_VERSION@/$(TotemPlParserVersion);@VERSION@/$(TotemPlParserVersion);@TOTEM_PL_PARSER_API_VERSION@/$(TotemPlParserApiVersion)"
+				Substitute="@TOTEM_PL_PARSER_VERSION_MAJOR@/$(TotemPlParserMajorVersion);@TOTEM_PL_PARSER_VERSION_MINOR@/$(TotemPlParserMinorVersion);@TOTEM_PL_PARSER_VERSION_MICRO@/$(TotemPlParserMicroVersion);@TOTEM_PL_PARSER_VERSION@/$(TotemPlParserVersion);@VERSION@/$(TotemPlParserVersion);@TOTEM_PL_PARSER_API_VERSION@/$(TotemPlParserApiVersion)"
 			/>
 			<Tool
 				Name="SEDTool"
@@ -114,7 +114,7 @@
 		<Configuration
 			Name="ReleaseWdkCrt|Win32"
 			ConfigurationType="10"
-			InheritedPropertySheets="$(OAH_INSTALLED_PATH)\vsprops\oah-$(PlatformName)-$(ConfigurationName).vsprops;"
+			InheritedPropertySheets="$(OAH_INSTALLED_PATH)\vsprops\oah-$(PlatformName)-$(ConfigurationName).vsprops"
 			CharacterSet="2"
 			>
 			<Tool
@@ -293,6 +293,10 @@
 	<Files>
 		<File
 			RelativePath="..\config.h.in"
+			>
+		</File>
+		<File
+			RelativePath="..\..\plparse\totem-pl-parser-features.h.in"
 			>
 		</File>
 	</Files>

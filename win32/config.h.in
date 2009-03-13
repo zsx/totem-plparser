@@ -74,13 +74,13 @@
 #define PACKAGE_NAME "totem-pl-parser"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "totem-pl-parser @TOTEM_PL_PARSER_MAJOR_VERSION@.@TOTEM_PL_PARSER_MINOR_VERSION@.@TOTEM_PL_PARSER_MICRO_VERSION@"
+#define PACKAGE_STRING "totem-pl-parser @TOTEM_PL_PARSER_VERSION_MAJOR@.@TOTEM_PL_PARSER_VERSION_MINOR@.@TOTEM_PL_PARSER_VERSION_MICRO@"
 
 /* Define to the one symbol short name of this package. */
 #define PACKAGE_TARNAME "totem-pl-parser"
 
 /* Define to the version of this package. */
-#define PACKAGE_VERSION "@TOTEM_PL_PARSER_MAJOR_VERSION@.@TOTEM_PL_PARSER_MINOR_VERSION@.@TOTEM_PL_PARSER_MICRO_VERSION@"
+#define PACKAGE_VERSION "@TOTEM_PL_PARSER_VERSION_MAJOR@.@TOTEM_PL_PARSER_VERSION_MINOR@.@TOTEM_PL_PARSER_VERSION_MICRO@"
 
 /* Define to 1 if you have the ANSI C header files. */
 #define STDC_HEADERS 1
@@ -108,7 +108,7 @@
 
 
 /* Version number of package */
-#define VERSION "@TOTEM_PL_PARSER_MAJOR_VERSION@.@TOTEM_PL_PARSER_MINOR_VERSION@.@TOTEM_PL_PARSER_MICRO_VERSION@"
+#define VERSION "@TOTEM_PL_PARSER_VERSION_MAJOR@.@TOTEM_PL_PARSER_VERSION_MINOR@.@TOTEM_PL_PARSER_VERSION_MICRO@"
 
 /* Define to 1 if on MINIX. */
 /* #undef _MINIX */

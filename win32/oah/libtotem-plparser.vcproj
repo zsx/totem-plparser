@@ -308,7 +308,7 @@
 				Name="generated"
 				>
 				<File
-					RelativePath="$(InDir)\totemplparser-marshal.c"
+					RelativePath="$(IntDir)\totemplparser-marshal.c"
 					>
 				</File>
 			</Filter>
@@ -422,24 +422,6 @@
 					</FileConfiguration>
 				</File>
 				<File
-					RelativePath="..\..\plparse\totem-pl-parser-features.h"
-					>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="HeaderInstallerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="HeaderInstallerTool"
-						/>
-					</FileConfiguration>
-				</File>
-				<File
 					RelativePath="..\..\plparse\totem-pl-parser-mini.h"
 					>
 					<FileConfiguration
@@ -480,7 +462,25 @@
 				Name="generated"
 				>
 				<File
-					RelativePath="$(InDir)\totemplparser-marshal.h"
+					RelativePath="$(IntDir)\..\generated\totem-pl-parser-features.h"
+					>
+					<FileConfiguration
+						Name="Debug|Win32"
+						>
+						<Tool
+							Name="HeaderInstallerTool"
+						/>
+					</FileConfiguration>
+					<FileConfiguration
+						Name="Release|Win32"
+						>
+						<Tool
+							Name="HeaderInstallerTool"
+						/>
+					</FileConfiguration>
+				</File>
+				<File
+					RelativePath="$(IntDir)\totemplparser-marshal.h"
 					>
 				</File>
 			</Filter>
@@ -499,10 +499,6 @@
 				>
 			</File>
 			<File
-				RelativePath="$(InDir)\totem-plparser.pc"
-				>
-			</File>
-			<File
 				RelativePath="..\..\totem-plparser.pc.in"
 				>
 				<FileConfiguration
@@ -511,6 +507,7 @@
 					<Tool
 						Name="DotInGeneratorTool"
 						Substitute="@prefix@/\$\(OutDir\);@exec_prefix@/${prefix};@libdir@/${prefix}\/lib;@libexecdir@/${prefix}\/libexec;@includedir@/${prefix}\/include;@LIBCAMEL@/;@USELIBCAMEL@/no"
+						OutputFileName="$(InputName)"
 					/>
 				</FileConfiguration>
 				<FileConfiguration
@@ -523,7 +520,7 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="$(InDir)\totem-plparser.rc"
+				RelativePath="$(IntDir)\totem-plparser.rc"
 				>
 			</File>
 			<File
