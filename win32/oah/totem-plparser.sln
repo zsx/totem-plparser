@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtotem-plparser", "libtotem-plparser.vcproj", "{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{952F28D6-E423-4EB9-A70D-22D00F2B0B20} = {952F28D6-E423-4EB9-A70D-22D00F2B0B20}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "generated", "generated.vcproj", "{952F28D6-E423-4EB9-A70D-22D00F2B0B20}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+		ReleaseWdkCrt|Win32 = ReleaseWdkCrt|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}.Debug|Win32.Build.0 = Debug|Win32
+		{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}.Release|Win32.ActiveCfg = Release|Win32
+		{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}.Release|Win32.Build.0 = Release|Win32
+		{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}.ReleaseWdkCrt|Win32.ActiveCfg = Release|Win32
+		{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}.ReleaseWdkCrt|Win32.Build.0 = Release|Win32
+		{952F28D6-E423-4EB9-A70D-22D00F2B0B20}.Debug|Win32.ActiveCfg = Debug|Win32
+		{952F28D6-E423-4EB9-A70D-22D00F2B0B20}.Debug|Win32.Build.0 = Debug|Win32
+		{952F28D6-E423-4EB9-A70D-22D00F2B0B20}.Release|Win32.ActiveCfg = Release|Win32
+		{952F28D6-E423-4EB9-A70D-22D00F2B0B20}.Release|Win32.Build.0 = Release|Win32
+		{952F28D6-E423-4EB9-A70D-22D00F2B0B20}.ReleaseWdkCrt|Win32.ActiveCfg = ReleaseWdkCrt|Win32
+		{952F28D6-E423-4EB9-A70D-22D00F2B0B20}.ReleaseWdkCrt|Win32.Build.0 = ReleaseWdkCrt|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

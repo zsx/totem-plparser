@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioPropertySheet
+	ProjectType="Visual C++"
+	Version="8.00"
+	Name="TotemPlParserVersion"
+	>
+	<UserMacro
+		Name="TotemPlParserMajorVersion"
+		Value="2"
+	/>
+	<UserMacro
+		Name="TotemPlParserMinorVersion"
+		Value="25"
+	/>
+	<UserMacro
+		Name="TotemPlParserMicroVersion"
+		Value="1"
+	/>
+	<UserMacro
+		Name="TotemPlParserApiVersion"
+		Value="$(TotemPlParserMajorVersion).0"
+	/>
+	<UserMacro
+		Name="TotemPlParserVersion"
+		Value="$(TotemPlParserMajorVersion).$(TotemPlParserMinorVersion).$(TotemPlParserMicroVersion)"
+	/>
+	<UserMacro
+		Name="HOST"
+		Value="i486-windows"
+	/>
+</VisualStudioPropertySheet>
