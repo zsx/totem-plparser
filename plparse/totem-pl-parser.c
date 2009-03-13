@@ -156,6 +156,14 @@
 #include "totem-pl-parser-misc.h"
 #include "totem-pl-parser-private.h"
 
+#ifndef S_ISBLK
+  #ifndef S_IFBLK
+    #define S_ISBLK(m) (0)
+  #else
+    #define S_ISBLK(m) (((m) & S_IFMT)==S_IFBLK)
+  #endif /* S_IFBLK */
+#endif /* S_ISBLK */
+
 #define READ_CHUNK_SIZE 8192
 #define RECURSE_LEVEL_MAX 4
 
