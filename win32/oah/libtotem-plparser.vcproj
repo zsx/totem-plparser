@@ -499,6 +499,10 @@
 				>
 			</File>
 			<File
+				RelativePath="$(IntDir)\totem-plparser.pc"
+				>
+			</File>
+			<File
 				RelativePath="..\..\totem-plparser.pc.in"
 				>
 				<FileConfiguration
