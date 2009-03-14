@@ -97,6 +97,7 @@
 				OutputFile="$(OutDir)\bin\$(ProjectName).dll"
 				Version="$(TotemPlParserVersion)"
 				LinkIncremental="2"
+				AdditionalLibraryDirectories="$(IntDir)\..\libcomp\lib"
 				ModuleDefinitionFile="$(IntDir)\plparser.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"

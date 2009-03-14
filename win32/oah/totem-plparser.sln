@@ -3,13 +3,14 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual C++ Express 2008
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtotem-plparser", "libtotem-plparser.vcproj", "{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}"
 	ProjectSection(ProjectDependencies) = postProject
-		{952F28D6-E423-4EB9-A70D-22D00F2B0B20} = {952F28D6-E423-4EB9-A70D-22D00F2B0B20}
+		{47AF0675-FE10-44A9-9A9A-FC8DD800508F} = {47AF0675-FE10-44A9-9A9A-FC8DD800508F}
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "generated", "generated.vcproj", "{952F28D6-E423-4EB9-A70D-22D00F2B0B20}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtotem-plparser-mini", "libtotem-plparser-mini.vcproj", "{ADA22371-6786-4F16-A7E6-7234FB6BD793}"
 	ProjectSection(ProjectDependencies) = postProject
+		{47AF0675-FE10-44A9-9A9A-FC8DD800508F} = {47AF0675-FE10-44A9-9A9A-FC8DD800508F}
 		{952F28D6-E423-4EB9-A70D-22D00F2B0B20} = {952F28D6-E423-4EB9-A70D-22D00F2B0B20}
 	EndProjectSection
 EndProject
