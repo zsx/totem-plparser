@@ -24,6 +24,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test-parser", "test-parser.
 		{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C} = {A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "disc-test", "disc-test.vcproj", "{B0A6C0F5-F568-475D-BE7E-DC47D0DBBBA4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C} = {A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -61,6 +66,12 @@ Global
 		{82622727-1736-4570-86A7-B113DC1F005A}.Release|Win32.Build.0 = Release|Win32
 		{82622727-1736-4570-86A7-B113DC1F005A}.ReleaseWdkCrt|Win32.ActiveCfg = Release|Win32
 		{82622727-1736-4570-86A7-B113DC1F005A}.ReleaseWdkCrt|Win32.Build.0 = Release|Win32
+		{B0A6C0F5-F568-475D-BE7E-DC47D0DBBBA4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B0A6C0F5-F568-475D-BE7E-DC47D0DBBBA4}.Debug|Win32.Build.0 = Debug|Win32
+		{B0A6C0F5-F568-475D-BE7E-DC47D0DBBBA4}.Release|Win32.ActiveCfg = Release|Win32
+		{B0A6C0F5-F568-475D-BE7E-DC47D0DBBBA4}.Release|Win32.Build.0 = Release|Win32
+		{B0A6C0F5-F568-475D-BE7E-DC47D0DBBBA4}.ReleaseWdkCrt|Win32.ActiveCfg = Release|Win32
+		{B0A6C0F5-F568-475D-BE7E-DC47D0DBBBA4}.ReleaseWdkCrt|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
