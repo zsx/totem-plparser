@@ -93,7 +93,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libcomp"
+				AdditionalDependencies="libcomp.lib"
 				OutputFile="$(OutDir)\bin\$(ProjectName).dll"
 				Version="$(TotemPlParserVersion)"
 				LinkIncremental="2"
