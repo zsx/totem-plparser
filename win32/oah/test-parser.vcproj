@@ -4,7 +4,7 @@
 	Version="9.00"
 	Name="test-parser"
 	ProjectGUID="{82622727-1736-4570-86A7-B113DC1F005A}"
-	RootNamespace="testparser"
+	RootNamespace="test-parser"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -22,7 +22,7 @@
 		<Configuration
 			Name="Debug|Win32"
 			ConfigurationType="1"
-			InheritedPropertySheets="$(OAH_INSTALLED_PATH)\vsprops\oah-$(PlatformName)-$(ConfigurationName).vsprops"
+			InheritedPropertySheets="$(OAH_INSTALLED_PATH)\vsprops\oah-$(PlatformName)-$(ConfigurationName).vsprops;$(OAH_INSTALLED_PATH)\vsprops\oah-PC.vsprops"
 			CharacterSet="1"
 			>
 			<Tool
@@ -39,7 +39,7 @@
 			/>
 			<Tool
 				Name="PkgConfigTool"
-				AdditionalDeps="totem-plparser"
+				AdditionalDeps="totem-plparser gthread-2.0"
 			/>
 			<Tool
 				Name="SEDTool"
@@ -90,7 +90,7 @@
 				Name="VCLinkerTool"
 				LinkIncremental="2"
 				GenerateDebugInformation="true"
-				SubSystem="2"
+				SubSystem="1"
 				TargetMachine="1"
 			/>
 			<Tool
@@ -238,6 +238,10 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
+			<File
+				RelativePath=".\test-parser.oahdeps"
+				>
+			</File>
 		</Filter>
 	</Files>
 	<Globals>
