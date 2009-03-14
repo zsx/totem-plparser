@@ -93,6 +93,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="libcomp.lib"
 				OutputFile="$(OutDir)\bin\$(ProjectName).dll"
 				Version="$(TotemPlParserVersion)"
 				LinkIncremental="2"
@@ -239,10 +240,6 @@
 			Filter="cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx"
 			UniqueIdentifier="{4FC737F1-C7A5-4376-A066-2A32D752A2FF}"
 			>
-			<File
-				RelativePath="..\..\lib\asprintf.c"
-				>
-			</File>
 			<File
 				RelativePath="..\..\plparse\totem-pl-parser-builtins.c"
 				>
