@@ -8,6 +8,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtotem-plparser", "libtot
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "generated", "generated.vcproj", "{952F28D6-E423-4EB9-A70D-22D00F2B0B20}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libtotem-plparser-mini", "libtotem-plparser-mini.vcproj", "{ADA22371-6786-4F16-A7E6-7234FB6BD793}"
+	ProjectSection(ProjectDependencies) = postProject
+		{952F28D6-E423-4EB9-A70D-22D00F2B0B20} = {952F28D6-E423-4EB9-A70D-22D00F2B0B20}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -27,6 +32,12 @@ Global
 		{952F28D6-E423-4EB9-A70D-22D00F2B0B20}.Release|Win32.Build.0 = Release|Win32
 		{952F28D6-E423-4EB9-A70D-22D00F2B0B20}.ReleaseWdkCrt|Win32.ActiveCfg = ReleaseWdkCrt|Win32
 		{952F28D6-E423-4EB9-A70D-22D00F2B0B20}.ReleaseWdkCrt|Win32.Build.0 = ReleaseWdkCrt|Win32
+		{ADA22371-6786-4F16-A7E6-7234FB6BD793}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ADA22371-6786-4F16-A7E6-7234FB6BD793}.Debug|Win32.Build.0 = Debug|Win32
+		{ADA22371-6786-4F16-A7E6-7234FB6BD793}.Release|Win32.ActiveCfg = Release|Win32
+		{ADA22371-6786-4F16-A7E6-7234FB6BD793}.Release|Win32.Build.0 = Release|Win32
+		{ADA22371-6786-4F16-A7E6-7234FB6BD793}.ReleaseWdkCrt|Win32.ActiveCfg = Release|Win32
+		{ADA22371-6786-4F16-A7E6-7234FB6BD793}.ReleaseWdkCrt|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
