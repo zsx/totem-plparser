@@ -4,7 +4,7 @@
 	Version="9.00"
 	Name="libtotem-plparser"
 	ProjectGUID="{A56FEFEA-0E85-4BFE-8704-A3DB27323B3C}"
-	RootNamespace="totem-pl"
+	RootNamespace="totem-plparser"
 	Keyword="Win32Proj"
 	TargetFrameworkVersion="196613"
 	>
@@ -39,7 +39,7 @@
 			/>
 			<Tool
 				Name="PkgConfigTool"
-				AdditionalDeps="glib-2.0 libxml-2.0"
+				AdditionalDeps="gtk+-2.0 libxml-2.0 gettext"
 			/>
 			<Tool
 				Name="SEDTool"
@@ -492,10 +492,6 @@
 			>
 			<File
 				RelativePath="..\..\plparse\plparser.symbols"
-				>
-			</File>
-			<File
-				RelativePath=".\totem-pl.oahdeps"
 				>
 			</File>
 			<File
