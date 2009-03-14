@@ -39,7 +39,6 @@
 			/>
 			<Tool
 				Name="PkgConfigTool"
-				AdditionalDeps="totem-plparser gthread-2.0"
 			/>
 			<Tool
 				Name="SEDTool"
