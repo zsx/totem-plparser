@@ -182,9 +182,9 @@
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
 				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;&quot;$(IntDir)\..\generated&quot;;..\;..\..;..\..\lib"
-				PreprocessorDefinitions="HAVE_CONFIG_H;WIN32;_DEBUG;_WINDOWS;_USRDLL;TOTEMPLBASE_EXPORTS;LIBXML_SAX1_ENABLED;GNOMELOCALEDIR=\&quot;$(OUTDIR)/share/locale\&quot;"
+				PreprocessorDefinitions="HAVE_CONFIG_H;WIN32;_WINDOWS;_USRDLL;TOTEMPLBASE_EXPORTS;LIBXML_SAX1_ENABLED;GNOMELOCALEDIR=\&quot;$(OUTDIR)/share/locale\&quot;"
 				MinimalRebuild="true"
-				BasicRuntimeChecks="3"
+				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
@@ -202,11 +202,13 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
+				AdditionalDependencies="libintl.lib"
 				OutputFile="$(OutDir)\bin\$(ProjectName).dll"
 				Version="$(TotemPlParserVersion)"
-				LinkIncremental="2"
+				LinkIncremental="0"
+				AdditionalLibraryDirectories=""
 				ModuleDefinitionFile="$(IntDir)\plparser.def"
-				GenerateDebugInformation="false"
+				GenerateDebugInformation="true"
 				SubSystem="2"
 				ImportLibrary="$(OutDir)\lib\$(TargetName).lib"
 				TargetMachine="1"
@@ -537,7 +539,7 @@
 					>
 					<Tool
 						Name="DotInGeneratorTool"
-						Substitute="@prefix@/\$\(OutDir\);@exec_prefix@/${prefix};@libdir@/${prefix}\/lib;@libexecdir@/${prefix}\/libexec;@includedir@/${prefix}\/include;@LIBCAMEL@/;@USELIBCAMEL@/no"
+						Substitute="@TOTEM_PL_PARSER_MAJOR_VERSION@/$(TotemPlParserMajorVersion);@TOTEM_PL_PARSER_MINOR_VERSION@/$(TotemPlParserMinorVersion);@TOTEM_PL_PARSER_MICRO_VERSION@/$(TotemPlParserMicroVersion);@TOTEM_PL_PARSER_VERSION@/$(TotemPlParserVersion)"
 					/>
 				</FileConfiguration>
 			</File>

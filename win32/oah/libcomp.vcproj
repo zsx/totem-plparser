@@ -107,9 +107,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="4"
+			InheritedPropertySheets="$(OAH_INSTALLED_PATH)\vsprops\oah-$(PlatformName)-$(ConfigurationName).vsprops"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -156,6 +155,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
+				AdditionalIncludeDirectories="$(IntDir)\..\generated"
 				PreprocessorDefinitions="WIN32;NDEBUG;_LIB"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"

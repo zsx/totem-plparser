@@ -116,9 +116,8 @@
 		</Configuration>
 		<Configuration
 			Name="Release|Win32"
-			OutputDirectory="$(SolutionDir)$(ConfigurationName)"
-			IntermediateDirectory="$(ConfigurationName)"
 			ConfigurationType="1"
+			InheritedPropertySheets="$(OAH_INSTALLED_PATH)\vsprops\oah-$(PlatformName)-$(ConfigurationName).vsprops;$(OAH_INSTALLED_PATH)\vsprops\oah-PC.vsprops"
 			CharacterSet="1"
 			WholeProgramOptimization="1"
 			>
@@ -136,6 +135,7 @@
 			/>
 			<Tool
 				Name="PkgConfigTool"
+				AdditionalDeps="totem-plparser"
 			/>
 			<Tool
 				Name="SEDTool"
@@ -237,10 +237,6 @@
 			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav"
 			UniqueIdentifier="{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}"
 			>
-			<File
-				RelativePath=".\test-parser.oahdeps"
-				>
-			</File>
 		</Filter>
 	</Files>
 	<Globals>

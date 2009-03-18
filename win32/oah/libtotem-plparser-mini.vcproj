@@ -146,6 +146,7 @@
 			/>
 			<Tool
 				Name="PkgConfigTool"
+				AdditionalDeps="gtk+-2.0"
 			/>
 			<Tool
 				Name="SEDTool"
@@ -181,9 +182,9 @@
 				Optimization="2"
 				EnableIntrinsicFunctions="true"
 				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;&quot;$(IntDir)\..\generated&quot;;..\;..\..;..\..\lib"
-				PreprocessorDefinitions="HAVE_CONFIG_H;WIN32;_DEBUG;_WINDOWS;_USRDLL;TOTEMPLBASE_EXPORTS;LIBXML_SAX1_ENABLED;GNOMELOCALEDIR=\&quot;$(OUTDIR)/share/locale\&quot;;TOTEM_PL_PARSER_MINI"
+				PreprocessorDefinitions="HAVE_CONFIG_H;WIN32;_WINDOWS;_USRDLL;TOTEMPLBASE_EXPORTS;LIBXML_SAX1_ENABLED;GNOMELOCALEDIR=\&quot;$(OUTDIR)/share/locale\&quot;;TOTEM_PL_PARSER_MINI"
 				MinimalRebuild="true"
-				BasicRuntimeChecks="3"
+				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				UsePrecompiledHeader="0"
@@ -203,7 +204,7 @@
 				Name="VCLinkerTool"
 				OutputFile="$(OutDir)\bin\$(ProjectName).dll"
 				Version="$(TotemPlParserVersion)"
-				LinkIncremental="2"
+				LinkIncremental="0"
 				ModuleDefinitionFile="$(IntDir)\plparser-mini.def"
 				GenerateDebugInformation="false"
 				SubSystem="2"
@@ -289,7 +290,7 @@
 				Name="generated"
 				>
 				<File
-					RelativePath="$(IntDir)\totemplparser-marshal.c"
+					RelativePath=".\Win32\Release\obj\libtotem-plparser-mini\totemplparser-marshal.c"
 					>
 				</File>
 			</Filter>
@@ -429,20 +430,6 @@
 				<File
 					RelativePath="$(IntDir)\..\generated\totem-pl-parser-features.h"
 					>
-					<FileConfiguration
-						Name="Debug|Win32"
-						>
-						<Tool
-							Name="HeaderInstallerTool"
-						/>
-					</FileConfiguration>
-					<FileConfiguration
-						Name="Release|Win32"
-						>
-						<Tool
-							Name="HeaderInstallerTool"
-						/>
-					</FileConfiguration>
 				</File>
 				<File
 					RelativePath="$(IntDir)\totemplparser-marshal.h"
@@ -504,7 +491,7 @@
 					>
 					<Tool
 						Name="DotInGeneratorTool"
-						Substitute="@prefix@/\$\(OutDir\);@exec_prefix@/${prefix};@libdir@/${prefix}\/lib;@libexecdir@/${prefix}\/libexec;@includedir@/${prefix}\/include;@LIBCAMEL@/;@USELIBCAMEL@/no"
+						Substitute="@TOTEM_PL_PARSER_MAJOR_VERSION@/$(TotemPlParserMajorVersion);@TOTEM_PL_PARSER_MINOR_VERSION@/$(TotemPlParserMinorVersion);@TOTEM_PL_PARSER_MICRO_VERSION@/$(TotemPlParserMicroVersion);@TOTEM_PL_PARSER_VERSION@/$(TotemPlParserVersion)"
 					/>
 				</FileConfiguration>
 			</File>
