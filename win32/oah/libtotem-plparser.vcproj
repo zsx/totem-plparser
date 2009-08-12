@@ -73,7 +73,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;&quot;$(IntDir)\..\generated&quot;;..\;..\..;..\..\lib"
+				AdditionalIncludeDirectories="&quot;$(IntDir)&quot;;&quot;$(IntDir)\..\generated&quot;;..\;..\..;..\..\lib;..\..\deps\include"
 				PreprocessorDefinitions="HAVE_CONFIG_H;WIN32;_DEBUG;_WINDOWS;_USRDLL;TOTEMPLBASE_EXPORTS;LIBXML_SAX1_ENABLED;GNOMELOCALEDIR=\&quot;$(OUTDIR)/share/locale\&quot;"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -93,11 +93,11 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="libcomp.lib"
+				AdditionalDependencies="libcomp.lib gmime.lib Ws2_32.lib iconv.lib"
 				OutputFile="$(OutDir)\bin\$(ProjectName).dll"
 				Version="$(TotemPlParserVersion)"
 				LinkIncremental="2"
-				AdditionalLibraryDirectories="$(IntDir)\..\libcomp\lib"
+				AdditionalLibraryDirectories="&quot;$(IntDir)\..\libcomp\lib&quot;;..\..\deps\lib"
 				ModuleDefinitionFile="$(IntDir)\plparser.def"
 				GenerateDebugInformation="true"
 				SubSystem="2"
@@ -495,6 +495,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\totem-plparser.oahdeps"
+				>
+			</File>
+			<File
 				RelativePath="$(IntDir)\totem-plparser.pc"
 				>
 			</File>
@@ -506,7 +510,7 @@
 					>
 					<Tool
 						Name="DotInGeneratorTool"
-						Substitute="@prefix@/\$\(OutDir\);@exec_prefix@/${prefix};@libdir@/${prefix}\/lib;@libexecdir@/${prefix}\/libexec;@includedir@/${prefix}\/include;@LIBCAMEL@/;@USELIBCAMEL@/no"
+						Substitute="@prefix@/\$\(OutDir\);@exec_prefix@/${prefix};@libdir@/${prefix}\/lib;@libexecdir@/${prefix}\/libexec;@includedir@/${prefix}\/include;@GMIME@/gmime;@USEGMIME@/yes"
 						OutputFileName="$(InputName)"
 					/>
 				</FileConfiguration>
@@ -515,7 +519,7 @@
 					>
 					<Tool
 						Name="DotInGeneratorTool"
-						Substitute="@prefix@/\$\(OutDir\);@exec_prefix@/${prefix};@libdir@/${prefix}\/lib;@libexecdir@/${prefix}\/libexec;@includedir@/${prefix}\/include;@LIBCAMEL@/;@USELIBCAMEL@/no"
+						Substitute="@prefix@/\$\(OutDir\);@exec_prefix@/${prefix};@libdir@/${prefix}\/lib;@libexecdir@/${prefix}\/libexec;@includedir@/${prefix}\/include;@GMIME@/gmime;@USEGMIME@/yes"
 					/>
 				</FileConfiguration>
 			</File>
