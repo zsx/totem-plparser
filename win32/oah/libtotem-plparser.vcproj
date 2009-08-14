@@ -39,7 +39,7 @@
 			/>
 			<Tool
 				Name="PkgConfigTool"
-				AdditionalDeps="gtk+-2.0 libxml-2.0 gettext"
+				AdditionalDeps="libxml-2.0 gettext gthread-2.0"
 			/>
 			<Tool
 				Name="SEDTool"
@@ -492,10 +492,6 @@
 			>
 			<File
 				RelativePath="..\..\plparse\plparser.symbols"
-				>
-			</File>
-			<File
-				RelativePath=".\totem-plparser.oahdeps"
 				>
 			</File>
 			<File
