@@ -1,0 +1,5 @@
+build totem-pl-parser with official precompiled gtk+2 package
+
+set PKG_CONFIG_PATH=C:/GTK+2/lib/pkgconfig;C:/devel/lib/pkgconfig
+scons --PREFIX=C:/TOTEM --site-dir=..
+scons --PREFIX=C:/TOTEM --site-dir=.. install

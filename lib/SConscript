@@ -1,0 +1,4 @@
+# vim: ft=python expandtab
+Import("env")
+env_glibc = env.Clone()
+env_glibc.StaticLibrary("libtotem_glibc", ["asprintf.c"])

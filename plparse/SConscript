@@ -1,0 +1,104 @@
+# vim: ft=python expandtab
+#import tempfile
+#import re
+#import subprocess
+#import os
+
+Import('env')
+
+env.Append(CPPDEFINES = [('GNOMELOCALEDIR', r'\"' + env['PREFIX'].replace('\\', r'\\') + r'\\\\locale\"')])
+env.Append(CPPPATH=['#lib', '#plparse', 'C:\GTK+2\include', env['PREFIX']+'/include/gmime-2.6'])
+
+env_plparser = env.Clone(PDB='libtotem_plparser.pdb')
+
+plparserinclude_HEADERS =Split("\
+	totem-pl-parser-builtins.h		\
+	totem-pl-parser-features.h		\
+	totem-pl-parser.h			\
+	totem-pl-playlist.h			\
+	totem-disc.h				\
+	totem-pl-parser-mini.h")
+
+plparser_sources =Split("\
+	totem-pl-parser-builtins.c		\
+	totem-disc.c				\
+	totem-pl-parser.c			\
+	totem-pl-parser-lines.c			\
+	totemplparser-marshal.c			\
+	totem-pl-parser-media.c			\
+	totem-pl-parser-misc.c			\
+	totem-pl-parser-pla.c			\
+	totem-pl-parser-pls.c			\
+	totem-pl-parser-podcast.c		\
+	totem-pl-parser-qt.c			\
+	totem-pl-parser-smil.c			\
+	totem-pl-parser-wm.c			\
+	totem-pl-parser-xspf.c")
+
+libtotem_plparser_la_SOURCES = plparser_sources + Split("\
+	totem-pl-playlist.c			\
+	xmlparser.c			\
+	xmllexer.c")
+
+env_plparser['GLIB_GENMARSHAL_ARGV'] = (('prefix', 'totemplparser_marshal'),)
+env_plparser.MarshalGenerator(['totemplparser-marshal.c', 'totemplparser-marshal.h'], 'totemplparser-marshal.list')
+
+env_plparser_mk = env_plparser.Clone()
+env_plparser_mk_h = env_plparser_mk.Clone(GLIB_MKENUMS_ARGV = (('fhead', r'"#ifndef __TOTEM_PL_PARSER_BUILTINS_H__\n#define __TOTEM_PL_PARSER_BUILTINS_H__\n\n#include <glib-object.h>\n\nG_BEGIN_DECLS\n"'),
+                            ('fprod', r'"/* enumerations from \"@filename@\" */\n"'),
+                            ('vhead', r'"GType @enum_name@_get_type (void) G_GNUC_CONST;\n#define TOTEM_TYPE_@ENUMSHORT@ (@enum_name@_get_type())\n"'),
+                            ('ftail', r'"G_END_DECLS\n\n#endif /* __TOTEM_PL_PARSER_BUILTINS_H__ */"')))
+env_plparser_mk_h.Depends(env_plparser_mk_h.MkenumsGenerator('totem-pl-parser-builtins.h', "totem-pl-parser.h"), 'SConscript')
+
+env_plparser_mk_c = env_plparser_mk.Clone(GLIB_MKENUMS_ARGV = (('fhead', '"#include <totem-pl-parser.h>\n#include <totem-pl-parser-builtins.h>"'),
+                            ('fprod', r'"\n/* enumerations from \"@filename@\" */"'),
+                            ('vhead', r'"GType\n@enum_name@_get_type (void)\n{\n  static GType etype = 0;\n  if (etype == 0) {\n    static const G@Type@Value values[] = {"'),
+                            ('vprod', r'"      { @VALUENAME@, \"@VALUENAME@\", \"@valuenick@\" },"'),
+                            ('vtail', r'"      { 0, NULL, NULL }\n    };\n    etype = g_@type@_register_static (\"@EnumName@\", values);\n  }\n  return etype;\n}\n"')))
+env_plparser_mk_c.Depends(env_plparser_mk_c.MkenumsGenerator('totem-pl-parser-builtins.c', "totem-pl-parser.h"), 'SConscript')
+
+env_plparser.DotIn('totem-pl-parser-features.h', 'totem-pl-parser-features.h.in')
+env_plparser.Alias('install', env_plparser.Install('$PREFIX/include/totem-plparser/1/plparser', plparserinclude_HEADERS))
+
+env_plparser['DOT_SYMBOLS_FLAGS'] = '-DINCLUDE_VARIABLES -DG_OS_WIN32 -DALL_FILES'
+env_plparser.DotSymbols2Def('plparser.def', 'plparser.symbols')
+env_plparser.DotSymbols2Def('plparser-mini.def', 'plparser-mini.symbols')
+#env_plparser.RES('plparser.res', '#totem-plparser.rc')
+#env_plparser.RES('plparser-mini.res', '#totem-plparser-mini.rc')
+
+env_plparser.ParseConfig('pkg-config gio-2.0 --libs')
+env_plparser.ParseConfig('pkg-config gobject-2.0 --libs')
+env_plparser.ParseConfig('pkg-config gmime --libs')
+env_plparser.Append(LIBS='z.lib')
+dll = env_plparser.SharedLibrary(['libtotem_plparser' + env_plparser['LIB_SUFFIX'] + '.dll', 'libtotem_plparser.lib'], libtotem_plparser_la_SOURCES + ['plparser.def', '#lib/libtotem_glibc.lib'])
+env_plparser.Depends(dll, ['totemplparser-marshal.h', 'totem-pl-parser-builtins.h'])
+
+env_plparser.AddPostAction(dll, 'mt.exe -nologo -manifest ${TARGET}.manifest -outputresource:$TARGET;2')
+env_plparser.Alias('install', env_plparser.Install('$PREFIX/bin', 'libtotem_plparser' + env_plparser['LIB_SUFFIX'] + '.dll'))
+env_plparser.Alias('install', env_plparser.Install('$PREFIX/lib', 'totem_plparser.lib'))
+env_plparser.Alias('install', env_plparser.InstallAs('$PREFIX/lib/libtotem_plparser.lib', 'totem_plparser.lib'))
+if env_plparser['DEBUG'] == 1:
+    env_plparser.Alias('install', env_plparser.Install('$PREFIX/pdb', 'libtotem_plparser.pdb'))
+
+'''
+libtotem_plparser_mini_la_SOURCES =Split("\
+	totem-pl-parser.c			\
+	totem-pl-parser-lines.c			\
+	totem-pl-parser-misc.c			\
+	totem-pl-parser-pls.c			\
+	totem-pl-parser-podcast.c		\
+	totem-pl-parser-qt.c			\
+	totem-pl-parser-smil.c			\
+	totem-pl-parser-wm.c			\
+	totem-pl-parser-xspf.c			\
+	totem-pl-playlist.c")
+env_plparser_mini = env_plparser.Clone(PDB='libtotem_plparser_mini.pdb')
+env_plparser.Append(CPPDEFINES=['TOTEM_PL_PARSER_MINI'])
+dll = env_plparser_mini.SharedLibrary(['libtotem_plparser_mini' + env_plparser_mini['LIB_SUFFIX'] + '.dll', 'libtotem_plparser_mini.lib'], libtotem_plparser_mini_la_SOURCES + ['plparser-mini.def', '#lib/libtotem_glibc.lib'])
+env_plparser_mini.Depends(dll, ['totemplparser-marshal.h', 'totem-pl-parser-builtins.h'])
+
+env_plparser_mini.AddPostAction(dll, 'mt.exe -nologo -manifest ${TARGET}.manifest -outputresource:$TARGET;2')
+env_plparser_mini.Alias('install', env_plparser_mini.Install('$PREFIX/bin', 'libtotem_plparser_mini' + env_plparser_mini['LIB_SUFFIX'] + '.dll'))
+env_plparser_mini.Alias('install', env_plparser_mini.Install('$PREFIX/lib', 'totem_plparser_mini.lib'))
+env_plparser_mini.Alias('install', env_plparser_mini.InstallAs('$PREFIX/lib/libtotem_plparser_mini.lib', 'totem_plparser_mini.lib'))
+'''
