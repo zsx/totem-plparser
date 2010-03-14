@@ -58,7 +58,7 @@ env_plparser_mk_c = env_plparser_mk.Clone(GLIB_MKENUMS_ARGV = (('fhead', '"#incl
 env_plparser_mk_c.Depends(env_plparser_mk_c.MkenumsGenerator('totem-pl-parser-builtins.c', "totem-pl-parser.h"), 'SConscript')
 
 env_plparser.DotIn('totem-pl-parser-features.h', 'totem-pl-parser-features.h.in')
-env_plparser.Alias('install', env_plparser.Install('$PREFIX/include/totem-plparser/1/plparser', plparserinclude_HEADERS))
+env_plparser.Alias('install', env_plparser.Install('$PREFIX/include/totem-pl-parser/1/plparser', plparserinclude_HEADERS))
 
 env_plparser['DOT_SYMBOLS_FLAGS'] = '-DINCLUDE_VARIABLES -DG_OS_WIN32 -DALL_FILES'
 env_plparser.DotSymbols2Def('plparser.def', 'plparser.symbols')
@@ -72,13 +72,13 @@ env_plparser.ParseConfig('pkg-config gmime --cflags --libs')
 env_plparser.ParseConfig('pkg-config zlib --cflags --libs')
 #env_plparser.Append(LIBS='z.lib')
 #env_plparser.Append(LINKFLAGS='/NODEFAULTLIB:msvcrtd')
-dll = env_plparser.SharedLibrary(['libtotem_plparser' + env_plparser['LIB_SUFFIX'] + '.dll', 'totem_plparser.lib'], libtotem_plparser_la_SOURCES + ['plparser.def', '#lib/libtotem_glibc.lib'])
+dll = env_plparser.SharedLibrary(['libtotem-plparser' + env_plparser['LIB_SUFFIX'] + '.dll', 'totem-plparser.lib'], libtotem_plparser_la_SOURCES + ['plparser.def', '#lib/libtotem_glibc.lib'])
 env_plparser.Depends(dll, ['totemplparser-marshal.h', 'totem-pl-parser-builtins.h'])
 
 env_plparser.AddPostAction(dll, 'mt.exe -nologo -manifest ${TARGET}.manifest -outputresource:$TARGET;2')
-env_plparser.Alias('install', env_plparser.Install('$PREFIX/bin', 'libtotem_plparser' + env_plparser['LIB_SUFFIX'] + '.dll'))
-env_plparser.Alias('install', env_plparser.Install('$PREFIX/lib', 'totem_plparser.lib'))
-env_plparser.Alias('install', env_plparser.InstallAs('$PREFIX/lib/libtotem_plparser.lib', 'totem_plparser.lib'))
+env_plparser.Alias('install', env_plparser.Install('$PREFIX/bin', 'libtotem-plparser' + env_plparser['LIB_SUFFIX'] + '.dll'))
+env_plparser.Alias('install', env_plparser.Install('$PREFIX/lib', 'totem-plparser.lib'))
+env_plparser.Alias('install', env_plparser.InstallAs('$PREFIX/lib/libtotem-plparser.lib', 'totem-plparser.lib'))
 if env_plparser['DEBUG'] == 1:
     env_plparser.Alias('install', env_plparser.Install('$PREFIX/pdb', 'libtotem_plparser.pdb'))
 

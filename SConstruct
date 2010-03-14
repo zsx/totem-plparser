@@ -45,6 +45,7 @@ env.DotIn('totem-plparser.pc', 'totem-plparser.pc.in')
 env.DotIn('totem-plparser.rc', 'totem-plparser.rc.in')
 env.DotIn('totem-plparser-mini.pc', 'totem-plparser-mini.pc.in')
 env.DotIn('totem-plparser-mini.rc', 'totem-plparser-mini.rc.in')
+env.Alias('install', env.Install('$PREFIX/lib/pkgconfig', ['totem-plparser.pc', 'totem-plparser-mini.pc']))
 
 env.DotIn('config.h', 'config.h.win32.in')
 env.Command('config.h.win32.in', ['config.h.in', 'config.h.in.win32.patch'], '''    copy /y config.h.in config.h.win32.in
